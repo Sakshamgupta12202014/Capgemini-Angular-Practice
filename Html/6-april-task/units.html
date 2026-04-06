@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html{
+            font-size: 20px;
+        }
+
+        .container {
+            font-size: 30px;
+        }
+
+        #p {
+            font-size: 0.5em;  /* it is taking size according to its parent */
+        }
+
+        .container2 {
+            font-size: 0.5rem; /* it is taking reference from the root element (html)*/
+        }
+
+        /* #div {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("./nature.png");
+        } */
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            color: rgb(41, 169, 24);
+            background-image: url("nature.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            /* background-position: bottom; */
+            background-attachment: fixed; /* use this if you do not want your background image to scroll with the content above it */
+        }
+
+        #div1 {
+            height: 200px;
+            width: 200px;
+            border-color: yellow;
+            border-style: groove;
+            border-width: 10px;
+        }
+
+        #div2 {
+            height: 200px;
+            width: 200px;
+            border: 10px groove red;  /*combined the border properties*/
+        }
+        
+        #div3 {
+            height: 200px;
+            width: 200px;
+            margin-top: 1rem;
+            border-top: 10px groove greenyellow;
+            border-left: 10px dashed red;
+            border-right: 10px dotted orange;
+            border-bottom: 10px solid pink;
+        }
+
+        #div4 {
+            height: 200px;
+            width: 200px;
+            margin-top: 1rem;
+            border-radius: 5px 20px;
+            border: solid aquamarine;
+        }
+
+        #div5 {
+            height: 200px;
+            width: 200px;
+            margin-top: 1rem;
+            border-radius: 5px 10px 20px;
+            border: dotted red;
+        }
+
+        #div6 {
+            height: 200px;
+            width: 200px;
+            margin-top: 1rem;
+            border-radius: 5px 10px 20px 10px;
+            border: dashed orange;
+        }
+
+        #div7 {
+            height: 400px;
+            width: 400px;
+            box-sizing: border-box;   /*box size is fixed*/
+            border: 7px solid green;
+            color: white;
+            font-size: 0.7rem;
+            padding-top: 100px;
+            padding-right: 50px;
+            padding-left: 50px;
+            padding-bottom: 50px;
+        }
+
+        #div8 {
+            height: 400px;
+            width: 400px;
+            box-sizing: border-box;   /*box size is fixed*/
+            border: 7px solid red;
+            color: white;
+            font-size: 0.7rem;
+            /* padding-top: 100px;
+            padding-right: 50px;
+            padding-left: 50px; */
+            /* padding: 100px 20px 50px; */
+            /* padding: 50px 50px; */
+            padding: 120px 0px 50px 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+    <!-- <section class="container" >
+        <p id="p">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora facere nemo minima accusantium natus quis. Saepe eum modi, nulla voluptatem enim impedit a praesentium deserunt repudiandae molestias odit facere quidem asperiores minima voluptas eligendi? Quisquam, nobis similique. Adipisci vitae eveniet, nisi molestiae dolores, exercitationem sit ut, id minima rerum ea!
+        </p>
+    </section>
+
+    <section class="container2" >
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora facere nemo minima accusantium natus quis. Saepe eum modi, nulla voluptatem enim impedit a praesentium deserunt repudiandae molestias odit facere quidem asperiores minima voluptas eligendi? Quisquam, nobis similique. Adipisci vitae eveniet, nisi molestiae dolores, exercitationem sit ut, id minima rerum ea!
+        </p>
+    </section> -->
+
+
+    <!--  -->
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet accusantium earum sunt dolorem commodi quae, aspernatur sint non quam tempora quod facilis reprehenderit ex cumque excepturi praesentium officiis omnis at porro. Amet eum facere cupiditate non sit quod officiis voluptatem ex commodi nulla quae, eius vitae quo quidem doloremque vel minus, laboriosam doloribus dolor deleniti id suscipit. Tempore dolorem perferendis repellat, veniam asperiores quas eum, esse quod ab ipsam commodi dolor harum! Dicta corporis sapiente laudantium sint nisi veniam exercitationem officiis. Atque deserunt assumenda ipsam ratione fuga dolorem perferendis. Numquam laboriosam tempora omnis veniam earum eveniet ipsa ratione dolore quis quae debitis minima amet, ipsam nemo nostrum ducimus illum dolorem, recusandae blanditiis. Excepturi ipsum deserunt nobis accusamus, sed deleniti in maiores eos fugit corporis atque ratione sit dignissimos neque iste quibusdam voluptatibus eum qui? Dolore cumque necessitatibus ad minus deserunt impedit perspiciatis! Voluptas excepturi ex ea. Quam adipisci vitae, sed quia maxime quis aperiam eos cupiditate ab voluptates fugit assumenda unde natus? Doloremque totam sapiente quia nulla, nemo pariatur aspernatur cumque mollitia molestiae sint. Sed ipsum quasi necessitatibus temporibus praesentium at quae rerum deserunt repellat nihil esse corrupti inventore neque quaerat repudiandae, eum quisquam tenetur eius doloribus fugit nesciunt atque accusamus autem. Perferendis, molestiae accusamus. Labore deserunt delectus blanditiis voluptatibus iste quae repudiandae esse voluptatem illo doloremque, quam facere quo corporis quis a dolore. Inventore similique aut quidem nobis facilis perspiciatis nulla, amet nam ad officiis ut impedit aliquid rerum possimus quos, voluptates nostrum. Laborum maxime dolore a 
+    </p>
+
+    <!-- Learning borders -->
+    <div id="div1">
+    </div>
+
+    <div id="div2">
+    </div>
+
+    <div id="div3">    
+    </div>
+
+    <div id="div4">  
+    </div>
+
+    <div id="div5">
+    </div>
+
+    <div id="div6">
+    </div>
+
+    <!-- learning padding and margin box-sizing -->
+    <div id="div7">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, voluptas saepe. Aspernatur in nostrum eum quidem voluptatibus incidunt iure esse? Magnam obcaecati sapiente hic, minus error harum illo eum est vero optio debitis quae nemo inventore, nihil modi accusamus quos a, provident quidem voluptas blanditiis odit. Voluptas nam velit eos!</p>
+    </div>
+
+    <div id="div8">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, voluptas saepe. Aspernatur in nostrum eum quidem voluptatibus incidunt iure esse? Magnam obcaecati sapiente hic, minus error harum illo eum est vero optio debitis quae nemo inventore, nihil modi accusamus quos a, provident quidem voluptas blanditiis odit. Voluptas nam velit eos!</p>
+    </div>
+
+    
+</body>
+</html>

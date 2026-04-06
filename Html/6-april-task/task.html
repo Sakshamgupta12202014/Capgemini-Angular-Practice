@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            font-size: 16px;
+        }
+        body{
+            background-color: blanchedalmond;
+        }
+        #outer {
+            background-color: yellow;
+            height: 500px;
+            width: 400px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        #inner {
+            border-radius: 20px;
+            border: 1px solid black;
+            height: 90%;
+            background-color: white;
+            padding: 10px;
+        }
+        #course_img {
+            border-radius: 20px;
+            width: 95%;
+            height: 35%;
+        }
+        #profile {
+            border-radius: 50%;
+        }
+
+        /* #profile_container {
+        } */
+        #tab {
+            border: 1px solid black;
+            background-color: yellow;
+            width: fit-content;
+            border-radius: 5px;
+            padding: 2px;
+        }
+        #title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        #desciption {
+            color: grey;
+        }
+        #trainer {
+            font-weight: 600;
+        }
+
+        #card {
+            height: auto;
+            width: 350px;
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgb(50, 49, 49);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #profile_image {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        #name {
+            color: white;
+            font-weight: 600;
+            font-size: 1.5em;
+            margin: 0;
+        }
+        #address {
+            color: greenyellow;
+            margin: 2px;
+            font-size: 14px;
+        }
+        #description {
+            color: aliceblue;
+            font-size: 14px;
+        }
+        ul{
+            padding: 0px;
+        }
+        .list-elem {
+            color: white;
+            border: 1px solid black;
+            width: 300px;
+            background-color: rgb(41, 39, 39);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+      
+    </style>
+</head>
+<body>
+
+    <!-- Task 1 -->
+    <div id="outer">
+
+        <div id="inner">
+            <img id="course_img" src="https://learn.piyushgarg.dev/_next/image?url=https%3A%2F%2Fdcaj3bhl5hivm.cloudfront.net%2F__courses%2F7a0e705d-cc9b-4695-a85f-351bbe8394ea%2FCOURSE_IMAGE%2FDSA-cw45ZJ.webp&w=828&q=75"  alt="image">
+
+            <p id="tab"><strong>Learning</strong></p>
+
+            <p>Published 21 Dec 2023</p>
+
+            <p id="title">DSA Foundations</p>
+
+            <p id="desciption">These languages are the backbone of every
+                website, defining structure, content, and
+                presentation.</p>
+
+            <table>
+                <td><img id="profile" src="/nature.png" height="50px" width="50px" alt="profile_image"></td>
+                <td><span id="trainer">Saksham Gupta</span></td>
+            </table>
+        
+        </div>
+    </div>
+
+    <!-- Task 2 -->
+    <div id="card">
+
+        <img id="profile_image" src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg">
+
+        <p id="name"> Jessica Randall</p>   
+        <p id="address">London. United Kingdom</p>
+
+        <p id="description">"Front-end developer and avid reader."</p>
+        <ul style="list-style-type: none;">
+            <li class="list-elem">Github</li>
+            <li class="list-elem">Frontend Mentor</li>
+            <li class="list-elem">Linkedin</li>
+            <li class="list-elem">Twitter</li>
+            <li class="list-elem">Instagram</li>
+        </ul>
+    </div>
+
+   
+
+</body>
+</html>
