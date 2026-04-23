@@ -6,6 +6,7 @@ import { Footer } from './footer/footer';
 import { Parent } from './parent/parent';
 import { Forms } from './forms/forms';
 import { DataService } from "./data-service/data-service";
+import { TemplateReference } from './template-reference/template-reference';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ import { DataService } from "./data-service/data-service";
         color: white;
       }
     `,
-    imports: [Home, Navbar, Footer, Parent, Forms, DataService]
+    imports: [Home, Navbar, Footer, Parent, Forms, DataService, TemplateReference]
 
 })
 export class App {

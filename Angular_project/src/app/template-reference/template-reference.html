@@ -1,0 +1,39 @@
+<p>template-reference works!</p>
+
+<!-- A Template Reference Variable is a way to give an HTML element a name directly in the template, and then use that name anywhere else in the same template to access the element or its properties. -->
+
+<input type="text" #myInput>
+<button (click)="greet(myInput.value)">Greet User</button>
+<button (click)="myInput.focus()">Focus On Input</button>
+
+<br><br>
+
+<input #emailInput type="email" />
+<button (click)="focusInput()">Focus</button>
+
+
+
+
+<!-- We are studying the type 4 in template reference where reference is assigned a directive -->
+<input
+  #emailRef="ngModel"
+  [(ngModel)]="email"
+  name="email"
+  required
+  email
+/>
+
+<!-- Before user touches the field — show nothing -->
+<!-- After user touches and leaves — show errors -->
+
+<div *ngIf="emailRef.touched">
+  <p *ngIf="emailRef.errors?.['required']">⚠️ Email is required.</p>
+  <p *ngIf="emailRef.errors?.['email']">⚠️ Enter a valid email.</p>
+</div>
+
+<p *ngIf="emailRef.valid">✅ Email looks good!</p>
+
+<!-- Seeing all states live -->
+<p>Valid: {{ emailRef.valid }}</p>
+<p>Touched: {{ emailRef.touched }}</p>
+<p>Dirty: {{ emailRef.dirty }}</p>
