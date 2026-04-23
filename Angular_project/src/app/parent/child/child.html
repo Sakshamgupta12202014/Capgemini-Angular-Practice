@@ -1,0 +1,113 @@
+<p>child works!</p>
+
+<!-- <h3>{{ data }}</h3>
+<h4>{{ val }}</h4> -->
+
+<!-- <h2>{{ arr }}</h2> -->
+<!-- <ul>
+  @for (val of arr; track $index) {
+    <li>
+      {{ val }}
+    </li>
+  }
+</ul> -->
+
+
+<button
+  (click)="sendMessage()"
+  >Send Message to Parent
+</button>
+
+<button
+  (click)="sendMarks()"
+  [ngStyle]="{margin: '10px', cursor : 'pointer', padding: '10px', borderRadius : '10px', backgroundColor : 'pink' , fontWeight : '700'}"
+  >Send marks to Parent
+</button>
+
+<!-- Content Projection -->
+<!-- <ng-content></ng-content> -->
+
+
+<!-- ngClass directive -->
+
+<h1 [ngClass]="{active : true}">This is ng Class directive</h1>
+
+<h1 [ngClass]="{active : act, inactive: inact}">This is ng Class directive</h1>
+
+<button (click)="handleClass()">remove_css</button>
+
+
+<!-- ngStyle directive  -->
+
+<h1 [ngStyle]="{
+  color: 'green',
+}">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate recusandae, vero accusantium, alias eaque dolorem commodi distinctio, quasi inventore ab delectus! Nemo ipsam amet reprehenderit a cumque suscipit assumenda voluptas.</h1>
+
+<h1 [ngStyle]="css">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate recusandae, vero accusantium, alias eaque dolorem commodi distinctio, quasi inventore ab delectus! Nemo ipsam amet reprehenderit a cumque suscipit assumenda voluptas.</h1>
+
+
+<!-- structural directives  -->
+<button (click)="handleLogin()">toggle login</button>
+
+<div *ngIf="login else failed">
+  <h1>Login success</h1>
+  <h2>Hello User</h2>
+</div>
+
+
+<ng-template #failed>
+  <h1>Logout successfully</h1>
+</ng-template>
+
+
+
+<!-- This is ngFor of directive -->
+<ul>
+  <li *ngFor="let data of subjects">{{data}}</li>
+</ul>
+
+
+<!-- this is ngSwitch -->
+<div [ngSwitch]="user">
+  <h1 *ngSwitchCase="'user'">User</h1>
+  <h1 *ngSwitchCase="'admin'">User</h1>
+  <h1 *ngSwitchCase="'recruiter'">User</h1>
+  <h1 *ngSwitchCase="'job-seeker'">User</h1>
+  <h1 *ngSwitchDefault="">Unauthorized user</h1>
+</div>
+
+
+<!-- Control flow statements -->
+
+@if(user === "user") {
+  <h2>this is user dashbord</h2>
+}@else if (user === 'admin') {
+  <h2>this is admin dashboard</h2>
+}@else if (user === 'guest') {
+  <h2>this is guest dashboard</h2>
+}@else {
+  <h2>Access Denied: Unauthorized User</h2>
+}
+
+<ul>
+  @for(item of subjects; track $index) {
+    <li>{{ item }}</li>
+  }
+</ul>
+
+
+@switch (user) {
+  @case ('user') {
+    <h1>This is user dashboard</h1>
+  }
+  @case ('admin') {
+    <h1>This is admin dahboard</h1>
+  }
+  @case ('recruiter') {
+    <h1>This is recruiter dashboard</h1>
+  }
+  @default {
+    <h2>Access Denied: Unauthorized User</h2>
+  }
+}
+

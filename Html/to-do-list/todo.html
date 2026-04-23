@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-left: 50px;
+        }
+
+        .listItemShow {
+            display: flex;
+            padding: 20px;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            width: fit-content;
+            gap: 20px;
+            height: 40px;
+
+        }
+
+        .listItemHide{
+            display: none;
+        }
+
+        .todo-form {
+            display: flex;
+            gap: 10px;
+            flex-direction: row;
+            margin: 50px;
+        }
+
+        .btn{
+            border-radius: 10px;
+            padding: 10px;
+            font-weight: 600;
+            background-color: rgb(104, 104, 212);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+
+        .btn:hover {
+            background-color: rgb(35, 35, 123);
+        }
+
+        input[type="text"]{
+            border-radius: 10px;
+            padding: 10px;
+            transition: outline 1s ease;
+            border: 1px solid black;
+        }
+
+        input[type="text"]:focus {
+            outline: 2px groove rgb(76, 171, 254);
+            outline-width: 5px;
+            border: none;
+        }
+
+        .showError {
+            color: red;
+            display: block;
+        }
+        .hideError {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="todo-list-app">
+        <h2>Enter Todo Title: </h2>
+        <div class="todo-form">
+            <input type="text" name="title" id="title">
+            <span id="span"></span>
+            <button class="btn add">Add Todo</button>
+        </div>
+        <div class="list">
+            
+        </div>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+</html>

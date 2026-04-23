@@ -1,0 +1,24 @@
+/* This gets the higher priority than the global CSS (styles.css) */
+h1 {
+  color: aqua;
+}
+
+/*
+  Home is parent of about component
+  but if i try to provide the css , we cannot directly target the child elements through the parent css
+*/
+p {
+  color: red;
+}
+
+/*
+  Here we are trying to apply CSS to custom tags (app-about)
+  in custom tags we have to provide the behavior to this tag before applying css
+  that is why i provided the display property
+*/
+app-about {
+  display: block;
+  background-color: bisque;
+  border-radius: 20px;
+  padding: 10px;
+}

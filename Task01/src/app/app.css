@@ -1,0 +1,30 @@
+/* .grid {
+  display: grid;
+  gap: 0px;
+  grid-template-columns: repeat(3, 350px);
+  grid-template-rows: repeat(1, 400px);
+}
+
+app-sedans {
+  display: block;
+  background-color: orange;
+  padding: 20px;
+}
+
+app-luxury {
+   display: block;
+  background-color: rgb(32, 86, 21);
+  padding: 20px;
+
+}
+
+app-suvs {
+   display: block;
+  background-color: rgb(33, 133, 255);
+  padding: 20px;
+
+}
+
+app-button {
+  display: block;
+} */

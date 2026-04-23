@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            object-fit: cover;
+            position: absolute;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        #img2 {
+            left: 50px;
+            top: 50px;
+        }
+        #img3 {
+            left: 90px;
+            top: 90px;
+        }
+
+        img:hover {
+            z-index: 1000;
+            height: 250px;
+            width: 250px;
+        }
+
+        /* TASK 2 */
+        body{
+            background-color: antiquewhite;
+        }
+        #form {
+            display: flex;
+            height: 70vh;
+            width: 60vw;
+            border-radius: 20px;
+            background-color: white;
+            padding: 20px;
+            justify-content: space-between;
+            margin: auto;
+        }
+
+        #instructions {
+            background-color: rgb(140, 152, 221);
+            width: 250px;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        span{
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid white;
+            color: white;
+            font-weight: 600;
+        }
+
+        #active {
+            background-color: rgb(38, 127, 127);
+            color: white;
+        }
+
+        #user_info {
+            background-color: whitesmoke;
+            width: 400px;
+            padding: 20px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+
+        form label {
+            color: rgb(14, 14, 70);
+            font-size: 18px;
+            margin: 5px;
+        }
+
+        form input {
+            width: 350px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+            margin: 5px;
+        }
+
+        form button {
+            color: white;
+            font-weight: 600;
+            background-color: rgb(47, 47, 117);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border: none;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .steps div > p {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 3px;
+            color: white;
+        }
+
+        #button {
+            display: flex;
+            justify-content: right;
+            margin-top: 20px;
+            margin-right: 20px;
+        }
+
+        button{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <img id="img1" src="https://w0.peakpx.com/wallpaper/95/353/HD-wallpaper-oggy-and-the-cockroaches-dee-dee-cartoon-cartoon-tattoos-all-cartoon-oggy-and-jack.jpg" height="200px" width="200px">
+    <img id="img2" src="https://m.media-amazon.com/images/I/81mowZAL9vL._UF1000,1000_QL80_.jpg" height="200px" width="200px">
+    <img id="img3" src="https://m.media-amazon.com/images/I/81rqCq4jW1L._UF1000,1000_QL80_.jpg" height="200px" width="200px">
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <!-- Task 2 -->
+    <div id="form">
+        <div id="instructions">
+            <div class="steps">
+                <div class="step">
+                    <span id="active">1</span>
+                </div>
+                <div>
+                    <p style="color: rgb(215, 212, 212);">STEP 1</p>
+                    <p>YOUR INFO</p>
+                </div>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <span >2</span>
+                </div>
+
+                <div>
+                    <p style="color: rgb(215, 212, 212);">STEP 2</p>
+                    <p>SELECT PLANS</p>
+                </div>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <span >3</span>
+                </div>
+                <div>
+                    <p style="color: rgb(215, 212, 212);">STEP 3</p>
+                    <p>ADD-ONS</p>
+                </div>
+            </div>  
+            <div class="steps">
+                <div class="step">
+                    <span >4</span>
+                </div>
+                <div>
+                    <p style="color: rgb(215, 212, 212);">STEP 4</p>
+                    <p>SUMMARY</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="user_info">
+            <h1 style="color: rgb(10, 10, 67);">Personal Info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+            
+            <form action="" method="get">
+                <label for="name">Name: </label><br>
+                <input type="text" id="name" name="name" placeholder="Enter name"><br>
+
+                <label for="email">Email Address: </label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email "><br>
+
+                <label for="phone">Phone Number: </label><br>
+                <input type="number" id="phone" name="phone" placeholder="Enter your phone number"><br>
+
+                <div id="button">
+                    <button type="submit">Next Step</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

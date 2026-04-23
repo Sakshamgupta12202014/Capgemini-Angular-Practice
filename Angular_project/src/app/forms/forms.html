@@ -1,0 +1,42 @@
+<p>forms works!</p>
+
+<!--  reactive forms are test friendly whereas the template form are not
+  complex forms work better with reactive forms
+  template driven forms are better for small and mid scale forms
+  angular forms remove all the default behavior of htmlforms and allows you to wirte your own behavior (own logic)
+  -->
+<!-- Studying template reference -->
+<!-- This can also be done through ngModel -->
+ <!-- <p></p>
+<select name="" id="" #selection (change)="handleSelection(selection)">
+  <option value="guest">guest</option>
+  <option value="admin">admin</option>
+  <option value="user">user</option>
+</select> -->
+
+
+<!-- @switch (selection.value) {
+  @case ('user') {
+    <h1>This is user dashboard</h1>
+  }
+  @case ('admin') {
+    <h1>This is admin dashboard</h1>
+  }
+  @case ('guest') {
+    <h1>This is guest dashboard</h1>
+  }
+} -->
+
+
+<!-- 1. Simple Definition
+A template reference variable is a way to directly access an HTML element or directive inside the template. -->
+<!-- <input #myInput><br>
+<button (click)="printValue(myInput.value)">Print</button><br><br>
+
+
+<input #inputRef><br>
+<button (click)="inputRef.focus()">Focus</button> -->
+
+
+<!-- <app-template-drivenforms></app-template-drivenforms> -->
+<app-reactive-forms></app-reactive-forms>

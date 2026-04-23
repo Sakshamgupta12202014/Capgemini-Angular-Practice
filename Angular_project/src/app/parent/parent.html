@@ -1,0 +1,140 @@
+<p>parent works!</p>
+
+<!-- Step 3: use property binding to share dynamic data from Parent to child
+    1) we have declared members inside the class which makes it dynamic
+    2) pass this data as property binding:- use the variable that we declared inside the child ts file
+-->
+
+
+<!--
+    1) we have declared containers inside the child ts file with the same name
+    2) use these attributes value inside the child html
+
+    this shows how to send data from parent to child -->
+ <!-- <app-child [data]="childStringData"  [val]="childNumberData" [arr]="childArrayData"></app-child> -->
+
+
+ <!-- This shows how to recieve data from child to parent -->
+ <h2 [ngStyle]="{color : 'white'}">Data from child : {{ childMessage }}</h2>
+ <h2 [ngStyle]="{color:'white'}">Marks of Student sent by Child : {{ marksOfStudent }}</h2>
+<app-child
+  [data]="childStringData"
+  [val]="childNumberData"
+  [arr]="childArrayData"
+  (messageSent)="receiveMessage($event)"
+  (marksOfStudent)="receiveMarks($event)"
+  >
+</app-child>
+
+
+<!-- Concept :- Content Projection  -->
+<!--
+<app-child>
+  <h1>Hello , This is parent (Content Projection)</h1>
+</app-child> -->
+
+
+<!--  -->
+<!-- <app-child></app-child> -->
+
+<!-- we can also use interpolation with html attributes -->
+<img src="{{ imageUrl }}" alt="this image is shown through the interpolation" height="100px">
+
+<!-- This is an example of two way data binding without using ngModel-->
+<h1>{{ name }}</h1>
+<input [value]="name" (input)="name = $event.target.value">
+
+
+<!-- This is an example of two way data binding using ngModel-->
+<p [ngStyle]="{color:'white'}">{{ username }}</p>
+<input [(ngModel)]="username">
+
+<p [ngStyle]="{color:'white'}">Status: {{ isChecked }}</p>
+<input type="checkbox" [(ngModel)]="isChecked">
+
+
+<!-- 👉 Internally working of checkbox:
+<input
+  [checked]="isChecked"
+  (change)="isChecked = $event.target.checked"
+> -->
+
+
+<!-- Behavior
+User selects → variable updates
+Variable changes → selection updates -->
+
+<!-- 3. Dropdown (Select Option) -->
+<p [ngStyle]="{color:'white'}">Selected: {{ selectedCity }}</p>
+<select [(ngModel)]="selectedCity">
+  <option value="Delhi">Delhi</option>
+  <option value="Mumbai">Mumbai</option>
+</select>
+
+
+<!-- 4. Radio Buttons -->
+<p [ngStyle]="{color:'white'}">{{ gender }}</p>
+<input type="radio" name="gender" value="male" [(ngModel)]="gender"> Male
+<input type="radio" name="gender" value="female" [(ngModel)]="gender"> Female
+
+<!-- 5. Textarea (Multi-line Input) -->
+<p [ngStyle]="{color:'white'}">{{ message }}</p>
+<textarea [(ngModel)]="message"></textarea>
+
+
+<!-- 6. Range Slider (Interactive UI) -->
+<p [ngStyle]="{color:'white'}">Volume: {{ volume }}</p>
+<input type="range" min="0" max="100" [(ngModel)]="volume">
+
+
+<!-- 7. Toggle UI (Realistic Scenario) -->
+<p [ngStyle]="{color:'white'}">Mode: {{ darkMode ? 'Dark' : 'Light' }}</p>
+ <label [ngStyle]="{color:'white'}">
+  Dark Mode:
+  <input type="checkbox" [(ngModel)]="darkMode">
+</label>
+
+<!-- Pipes
+  (original data will not get modified , it will change only the look)
+  (requires CommonModule library) or import specific modules
+  -->
+
+<h2>{{ nameOfuser | uppercase }}</h2>
+<h2>{{ nameOfuser | lowercase}}</h2>
+<h2>{{ nameOfuser | titlecase}}</h2>
+
+<h2>{{ todayDate | date}}</h2>
+<h2>{{ todayDate | date:'short' | uppercase | titlecase | json}}</h2>
+<h2>{{ todayDate | date:'fullDate' }}</h2>
+<h2>{{ todayDate | date:'dd/MM/yyyy'}}</h2>
+<h2>{{ todayDate | date:'yyyy/MM/dd'}}</h2>
+
+
+<h2>{{ priceOfProduct | currency}}</h2>
+<!-- Pipe with Parameters  -->
+<h2>{{ priceOfProduct | currency:'INR'}}</h2>
+<h2>{{ priceOfProduct | currency:'INR':'symbol'}}</h2>
+<h2>{{ priceOfProduct | currency:'EUR' }}</h2>
+<h2>{{ priceOfProduct | currency:'GBP'}}</h2>
+
+<!-- slice pipe -->
+<h2>{{ nameOfuser | slice:0:3}}</h2>
+<h2>{{ nameOfuser | slice:1}}</h2>
+
+<!-- 6. Chaining Pipes -->
+<h2>{{ nameOfuser | uppercase | slice:0:4}}</h2>
+
+<h3>{{ obj | json }}</h3>
+<h3>{{ priceOfProduct | json }}</h3>
+<h3>{{ todayDate | date:'short' | json }}</h3>
+
+
+<h2>{{ num }}</h2>
+<h2>{{ num | number:'1.2-2' }}</h2>
+
+
+<h2>{{ weights | json }}</h2>
+<button (click)="changeWeight()">change weight</button>
+
+
+

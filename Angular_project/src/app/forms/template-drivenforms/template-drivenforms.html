@@ -1,0 +1,86 @@
+<p>template-drivenforms works!</p>
+
+<!-- Controls inside the forms contains all the input fields that are present inside the form  -->
+<!-- without using ngModel inside the form elements then ngForm will not track that element and will not insert the value when form is submitted of that element -->
+
+<form #loginInForm="ngForm" (ngSubmit)="handleSubmit(loginInForm)">
+  <label for="username" [ngStyle]="{color:'white', fontWeight: '700'}">username: </label><br>
+  <input type="text" name="username" id="username" ngModel required><br><br>
+  <label for="password" [ngStyle]="{color:'white', fontWeight: '700'}">password: </label><br>
+  <input type="text" name="password" id="password" ngModel required><br><br>
+  <button type="submit" [disabled]="loginInForm.invalid">submit</button>
+</form>
+
+<!-- These are form level states -->
+<p>pristine: {{ loginInForm.pristine }}</p>
+<p>dirty:{{ loginInForm.dirty }}</p>
+<p>touched: {{ loginInForm.touched }}</p>
+<p>untouched: {{ loginInForm.untouched }}</p>
+<p>valid: {{ loginInForm.valid }}</p>
+<p>invalid: {{ loginInForm.invalid }}</p>
+
+<!-- <form #loginInForm="ngForm" (ngSubmit)="handleSubmit(loginInForm)">
+  <label for="username" [ngStyle]="{color:'white', fontWeight: '700'}">username: </label><br>
+  <input type="text" name="username" id="username" [(ngModel)] = 'username'><br><br>
+  <label for="password" [ngStyle]="{color:'white', fontWeight: '700'}">password: </label><br>
+  <input type="text" name="password" id="password" [(ngModel)] = 'password'><br><br>
+  <button type="submit">submit</button>
+</form> -->
+
+
+<!--
+    NgForm Object (Form states(boolean value))
+    1) pristine ( default:- true,  pure just loaded the form , have not interacted in any way)
+    2) dirty (default:-false , when you type in input , or click button becomes true)
+    3) touched (default:- false, )
+    4) untouched (default:- true, )
+    5) valid
+    6) invalid
+-->
+
+<!-- Form validations using form states -->
+<!-- States of individual fields -->
+<form #loginInForm="ngForm" (ngSubmit)="handleSubmit(loginInForm)">
+  <label for="username" [ngStyle]="{color:'white', fontWeight: '700'}">username: </label><br>
+  <input
+  type="text"
+  name="username"
+  id="username"
+  [(ngModel)] = 'username'
+  #user="ngModel"
+  required
+  pattern="[a-zA-Z]+"
+  ><br>
+  @if (user.touched && user.invalid) {
+    <p>username is required</p>
+  }
+  <label for="password" [ngStyle]="{color:'white', fontWeight: '700'}">password: </label><br>
+  <input
+    type="text"
+    name="password"
+    id="password"
+    [(ngModel)] = 'password'
+    #pass="ngModel"
+    required minlength="8"
+    ><br><br>
+    @if (pass.touched || pass.dirty) {
+      @if (pass.invalid) {
+        <p>password is required </p>
+      }
+    }
+    <input
+      type="text"
+      name="email"
+      id="email"
+      [(ngModel)]="email"
+      #emailInput="ngModel"
+      required
+      pattern="^[a-zA-Z]{3,}@[a-zA-Z]{3,}\.[a-zA-Z]+$"
+      >
+      @if (emailInput.touched || emailInput.dirty) {
+        @if (emailInput.invalid) {
+          <p>email is not valid </p>
+        }
+      }
+  <button type="submit" [disabled]="pass.invalid">submit</button>
+</form>

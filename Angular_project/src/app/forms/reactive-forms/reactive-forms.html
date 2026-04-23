@@ -1,0 +1,102 @@
+<h1>reactive-forms works!</h1>
+
+
+
+<label for="username" [ngStyle]="{color:'white', fontWeight: '700'}">username: </label><br>
+<input type="text" name="username" id="username" [formControl]="username"><br><br>
+<label for="password" [ngStyle]="{color:'white', fontWeight: '700'}">password: </label><br>
+<input type="text" name="password" id="password" [formControl]="password"> <br><br>
+<button type="submit" (click)="onSubmit()">submit</button>
+
+
+<p>Reactive forms with states</p>
+<form [formGroup]="logInForm" (ngSubmit)="getValue()">
+  <label for="username" [ngStyle]="{color:'white', fontWeight: '700'}">username: </label><br>
+  <input type="text" name="username" id="username" formControlName="username" [ngClass]="{
+    valid : logInForm.get('username')?.valid,
+    invalid : logInForm.get('username')?.invalid,
+  }"><br>
+  <!-- @if (username.touched) {
+    <p>Username is invalid</p>
+  } -->
+  @if (logInForm.get('username')?.touched && logInForm.get('username')?.invalid) {
+    <p>username is not valid</p>
+  }
+  <label for="password" [ngStyle]="{color:'white', fontWeight: '700'}">password: </label><br>
+  <input type="text" name="password" id="password" formControlName="password"> <br>
+  <!-- @if (password.touched) {
+    <p>Password is invalid</p>
+  } -->
+  <button type="submit" (click)="onSubmit()" [disabled]="logInForm.invalid">submit</button>
+</form>
+
+
+<!-- Task to create a reactive form  -->
+<h1>This is Regitration Form </h1>
+<form [formGroup]="registrationForm" (ngSubmit)="getDetails()">
+  <label for="fName">FirstName: </label>
+  <input type="text" name="first_name" id="fName" formControlName="first_name" [ngClass]="
+  {
+    valid : registrationForm.get('first_name')?.valid,
+    invalid : registrationForm.get('first_name')?.invalid
+  }"><br><br>
+
+
+  <label for="lname">LastName: </label>
+  <input type="text" name="last_name" id="lname" formControlName="last_name" [ngClass]="
+  {
+    valid : registrationForm.get('last_name')?.valid,
+    invalid : registrationForm.get('last_name')?.invalid
+  }"><br><br>
+
+  <label for="phone">PNo: </label>
+  <input type="text" name="phone_no" id="phone" formControlName="phone_no" [ngClass]="
+  {
+    valid : registrationForm.get('phone_no')?.valid,
+    invalid : registrationForm.get('phone_no')?.invalid
+  }"><br><br>
+
+  <label for="email">Email: </label>
+  <input type="text" name="email" id="email" formControlName="email" [ngClass]="
+  {
+    valid : registrationForm.get('email')?.valid,
+    invalid : registrationForm.get('email')?.invalid
+  }"><br><br>
+
+  <!-- <label for="gender">Gender: </label> -->
+  <input type="radio" name="gender" value="male" formControlName="gender"> Male <br>
+  <input type="radio" name="gender" value="female" formControlName="gender"> Female <br>
+  <input type="radio" name="gender" value="other" formControlName="gender"> Other <br>
+  @if (registrationForm.get('gender')?.touched && registrationForm.get('gender')?.invalid) {
+    <p [ngStyle]="{color : 'red'}">please select gender</p>
+  }
+
+  <select name="subject" id="subject" formControlName="subject">
+    <option value="css" >CSS</option>
+    <option value="js" >JS</option>
+    <option value="ts" >TS</option>
+    <option value="angular" >Angular</option>
+  </select>
+  <button type="button" (click)="enableField()">Enable</button>
+  <button type="button" (click)="disableField()">Disable</button>
+
+  @if (registrationForm.get('subject')?.touched && registrationForm.get('subject')?.invalid) {
+    <p [ngStyle]="{color : 'red'}">please select gender</p>
+  }
+  <br><br>
+  <label for="address">Address: </label>
+  <input type="text" name="address" id="address" formControlName="address"><br><br>
+
+  <label for="city">City: </label>
+  <input type="text" name="city" id="city" formControlName="city"><br><br>
+
+  <label for="pincode">Pincode: </label>
+  <input type="text" name="pincode" id="pincode" formControlName="pincode"><br><br>
+
+  <label for="date">Date: </label>
+  <input type="date" name="date" id="date" formControlName="date"><br><br>
+
+  <button type="submit" [disabled]="registrationForm.invalid">Submit</button>
+  <button type="reset"> Reset</button>
+
+</form>

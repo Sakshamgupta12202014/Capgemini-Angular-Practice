@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frontend Quiz</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#2f3b4f;
+    color:white;
+}
+
+#container{
+    height:600px;
+    width:1000px;
+    background:#3a465a;
+    border-radius:10px;
+    padding:50px;
+
+    display:grid;
+    grid-template-columns: 1.2fr 1fr; 
+    align-items:start;               
+}
+
+#inner1{
+    margin-top: 50px;
+    padding-top:20px;  
+}
+
+#inner1 h1{
+    font-size:42px;
+}
+
+#inner1 p{
+    margin-top:15px;
+    color:#bbb;
+}
+
+#inner2{
+    margin-top: 60px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.card{
+    background:#4a5c78;
+    padding:15px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.icon{
+    height:40px;
+    width:40px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:black;
+    font-weight:bold;
+}
+
+.html{ background:#f4d4b5; }
+.css{ background:#b6f2c8; }
+.js{ background:#c9d7ff; }
+.acc{ background:#e6c9ff; }
+
+</style>
+</head>
+<body>
+
+<div id="container">
+
+    <div id="inner1">
+        <h1>Welcome to the</h1>
+        <h1><b>Frontend Quiz!</b></h1>
+        <p style="font-style: italic;margin-top: 20px;">Pick a subject to get started.</p>
+    </div>
+
+    <div id="inner2">
+
+        <div class="card">
+            <div class="icon html">H</div>
+            <h3>HTML</h3>
+        </div>
+
+        <div class="card">
+            <div class="icon css">C</div>
+            <h3>CSS</h3>
+        </div>
+
+        <div class="card">
+            <div class="icon js">JS</div>
+            <h3>Javascript</h3>
+        </div>
+
+        <div class="card">
+            <div class="icon acc">A</div>
+            <h3>Accessibility</h3>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
